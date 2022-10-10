@@ -1,0 +1,242 @@
+:root {
+    /*color palette*/
+    --cp-light-blue: #7CBAF9;
+    --cp-seawave: #7FACAC;
+    --cp-dark-blue: #020275;
+    --cp-white: #FFFFFF;
+    --cp-light-light-blue-op-75: rgba(203, 223, 244, 0.75);
+    --cp-light-light-blue-op-45: rgba(203, 223, 244, 0.45);
+    --cp-grey: #00000029;
+    --cp-mid-light-blue: #93C4F5;
+    --cp-black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', 'Tahoma';
+    font-weight: 400;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--cp-light-blue) 0%, var(--cp-seawave) 100%);
+    background-attachment: fixed;
+}
+
+#main-header{
+    width: 100%;
+    padding: 3vh 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header-text{
+    font-size: 4vh;
+    color: var(--cp-dark-blue);
+}
+
+.user-info{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+}
+
+.user-avatar{
+    border: 2px solid var(--cp-white);
+    width: 8vh;
+    height: 8vh;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#main-header-right-block{
+    display: flex;
+    gap: 3vw;
+    align-items: center;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+main{
+    width: 100%;
+    padding: 1vh 4vw 2vh;
+}
+
+#tasklists {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3vh 4vw;
+    align-items: flex-start;
+}
+
+.tasklist {
+    width: 20vw;
+    padding: 1vh 1.5vw;
+    border-radius: 10px;
+    background-color: var(--cp-light-light-blue-op-75);
+    box-shadow: 2px 2px 4px var(--cp-grey);
+}
+
+.tl-header {
+    font-size: 1.6vw;
+    font-weight: 600;
+    color: var(--cp-dark-blue);
+    margin-bottom: 1vh;
+}
+
+.tl-tasks {
+    margin-bottom: 1vh;
+}
+
+button {
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.tl-add-task-btn {
+    font-size: 2.5vh;
+}
+
+.tl-add-task-btn:hover {
+    font-weight: 500;
+}
+
+.tasks {
+ width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh
+}
+
+.task {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+    padding: 1vh 1vw;
+    border-right: 5px;
+    background-color: var(--cp-mid-light-blue);
+    border: 2px solid var(--cp-mid-light-blue);
+    box-shadow: 2px 2px 4px var(--cp-grey);
+    transition: all .4s ease;
+    /*flex-direction: column;*/
+    gap: 1.5vh;
+}
+
+.task:hover {
+    border-color: var(--cp-dark-blue);
+    background-color: var(--cp-light-blue);
+}
+
+.task-description {
+    display: flex;
+    font-size: 1.4vw;
+}
+
+.task-controls-row:first-child{
+    margin-bottom: 0.5vw;
+}
+.task-controls-row {
+    display: flex;
+    gap: 0.5vw;
+}
+
+.task-controls-btn{
+    opacity: 0.45;
+    transition: all .4s ease;
+}
+
+.task-controls-btn:hover{
+    opacity: 1;
+}
+
+.task-controls-btn > img {
+    width: 2vw;
+    height: 2vw;
+    object-fit: cover;
+    object-position: center;
+}
+
+.tasklist:last-child .tl-header{
+    margin-bottom: 0;
+}
+
+#add-tasklist-btn{
+    font-size: 1.6vw;
+    color: var(--cp-dark-blue)
+}
+
+#add-tasklist-btn:hover{
+    font-weight: 600;
+}
+
+#add-tasklist-input{
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    padding: 5px;
+    font-size: 1.5vw;
+    color: var(--cp-black);
+    border-radius: 5px;
+}
+
+#add-tasklist-input:focus{
+    box-shadow: 0 0 3px var(--cp-black)
+}
+
+.toggle-button{
+    outline: none;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 6vw;
+    height: 3vw;
+    background: none;
+    border: none;
+    transform: scale(0.8);
+
+}
+
+.toggle-button > input{
+    height: 0;
+    width: 0;
+    opacity: 0;
+}
+
+.toggle-button__slider{
+    position: absolute;
+    cursor: pointer;
+    background-color: var(--cp-light-blue);
+    inset: 0;
+    border-radius: 1.5vw;
+    border: 1px solid var(--cp-white);
+    transition: all .4s ease;
+}
+
+.toggle-button__slider::before{
+    width: calc(3vw - 6px);
+    height: calc(3vw - 6px);
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    transition: all .4s ease;
+    border-radius: 50%;
+    background-color: var(--cp-white);
+}
+
+input:checked + .toggle-button__slider::before{
+    transform: translateX(3vw);
+}

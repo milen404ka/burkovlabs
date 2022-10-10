@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
+    <title>Task Manager</title>
+</head>
+<body>
+    <header id="main-header">
+        <span id="app-name" class="main-header-text">
+            Custom Task Manager
+        </span>
+        <div id="main-header-right-block">
+            <div class="user-info">
+                <img src="images/keanu.jpg" alt="User avatar" class="user-avatar">
+                <span name="user-name" class="main-header-text">
+                    Keanu Reeves
+                </span>
+            </div>
+            <label class="toggle-button">
+                <input type="checkbox" />
+                <div class="toggle-button__slider">
+
+                </div>
+            </label>
+        </div>
+    </header>
+    <main>
+        <ol id="tasklists">
+            <li class="tasklist">
+                <header class="tl-header">
+                    К выполнeнию
+                </header>
+                <section class="tl-tasks">
+                    <ul class="tasks">
+                        <li class="task">
+                            <p class="task-description">
+                                Определиться с темой диплома
+                            </p>
+                            <div class="task-controls">
+                                <div class="task-controls-row">
+                                    <button class="task-controls-btn">
+                                        <img src="assets/left-arrow.svg"
+                                             alt="Edit task button"
+                                        />
+                                    </button>
+                                    <button class="task-controls-btn">
+                                        <img src="assets/right-arrow.svg"
+                                             alt="Edit task button"
+                                        />
+                                    </button>
+                                </div>
+                                <div class="task-controls-row">
+                                    <button class="task-controls-btn">
+                                        <img src="assets/delete.svg"
+                                             alt="Edit task button"
+                                        />
+                                    </button>
+                                    <button class="task-controls-btn">
+                                        <img src="assets/edit.svg"
+                                             alt="Edit task button"
+                                        />
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+            </section>
+                <footer class="tl-footer">
+                    <button type="button" class="tl-add-task-btn">
+                        Добавить задачу...
+                    </button>
+                </footer>
+            </li>
+            <li class="tasklist">
+                <header class="tl-header">
+<!--                    <button id="add-tasklist-btn">-->
+<!--                        Добавить список-->
+<!--                    </button>-->
+                </header>
+                <input type="text" placeholder="Добавить список..." id="add-tasklist-input">
+            </li>
+
+        </ol>
+    </main>
+</body>
+</html>
